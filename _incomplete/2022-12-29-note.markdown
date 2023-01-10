@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "RIB"
+katex: True
+categories: AlgTop
+---
+This is a Rapid Introduction to Bordism (I write it in abbreviation because I don't dare to write it as my title but RIB is fun). I am reading Adams' blue book but I feel sad that I don't know how does one prove any spectrum is the spectrum of a relatively complicated (co)homology theory. But fortunately, I saw "Notes on Cobordism" by Haynes Miller and it instantly catches me. The following sums up the first 3 sections in his book.
+
+It begins with Steenrod's question. Here I read "Duality on Compact Manifolds with Boundary" in "Topology and Geometry" by Glen E. Bredon. I'll skip it because the formulation of bordism is beautiful on its own.
+
+We consider smooth category.
+
+$\bf{Definition}:$
+
+   	
+1. A closed manifold M is null-bordant if M=$\partial$ W for some manifold W.
+
+2. A singular manifold (M,f), i.e. $f:M\rightarrow X$, M closed, is null-bordant if there exists an $F:W\rightarrow X$ extending f as above.
+3. (M,f)~(N,g) if (M$\amalg$N,(f,g)) is null-bordant.
+
+---Incomplete---

@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "Calculation of the Fundamental Group of S^1"
+katex: True
+categories: AlgTop
+---
+$\bf{Theorem}$:
+
+$\Phi : \mathbb{Z} \rightarrow  {\pi}\_{1}(S^{1})$ which maps an integer $n$ to homotopy class of loop $\omega\_{n}(s)=(\cos2\pi ns, \sin2\pi ns)$ based at (1,0) is an isomorphism.
+
+As we will see, the homomorphic property is easy to prove. The bijective property will be proved using the idea of $\bf{lift}$.
+
+$\bf{Proof} $:
+
+First, we will factor $\omega\_{n}(s)$ to $\tilde{\omega}\_{n}(s)$.
+
+{:refdef: style="text-align: center;"}
+![lifting](/assets/images/lift.png)
+{:refdef}
+
+where $p:\mathbb{R} \rightarrow S^{1}$ is given by $p(s) = (cos 2 \pi s, \sin 2 \pi s)$ and $\tilde{\omega}\_{n}(s):\it{I} \rightarrow \mathbb{R} $ is given by $ \tilde{\omega}\_{n}(s)= ns$. The $\tilde{\omega}\_{n}(s) $ is called a $\bf{lift}$ of $\omega\_{n}(s)$.
+
+Then, the definition of $\Phi$ can be reformulated by setting $\Phi(n)$ to be the homotopy class of the loop $p\tilde{f}$ where $\tilde{f}$ is any path in $\mathbb{R}$ from 0 to n. Because $\tilde{f}$ is homotopic to $\tilde{\omega}\_{n}$ by the straight line homotopy, i.e. $(1-t)\*\tilde{f} + t\*\tilde{\omega}\_{n}$. Thus, $[p\tilde{f}]$=$[p\tilde{\omega}\_{n}]$=$\Phi(n)$.
+
+(1)Homomorphic<br>We define a new notion called $\bf{translation}$ $\tau\_{m}:\mathbb{R} \rightarrow \mathbb{R}$ which is given by $\tau\_{m}(x):=x+m$. Since $\tilde{\omega}\_{m} \cdot (\tau\_{m}\tilde{\omega}\_{n})$ is a path in $\mathbb{R}$ from 0 to m+n. So, $\Phi(m+n)$ is just the image of this path under $p$ which is just $\omega\_{m} \cdot \omega\_{n}$. Thus, $\Phi(m+n) = \Phi(m) \cdot \Phi(n)$.
+
+To prove that it is bijection, we will need 2 facts (they will proved after proving bijectiveness):
+
+(a)For each path $f : \it{I}\rightarrow S^{1}$ starting at a point $x\_{0} \in S^{1}$ and each $x\_{0} \in p^{-1}(x\_{0})$ there<br>is a unique lift $\tilde{f} : \it{I}\rightarrow\mathbb{R}$ starting at $\tilde{x\_{0}}$.
+
+(b)For each homotopy $f\_{t} : \it{I} \rightarrow S^{1}$ of paths starting at $x\_{0}$ and each $\tilde{x\_{0}} \in p^{-1}(x\_{0})$<br>there is a unique lifted homotopy $\tilde{f\_{t}} : \it{I}\rightarrow\mathbb{R}$ of paths starting at $\tilde{x\_{0}}$.
+
+(2)Surjectiveness:<br>For any loop $f:\it{I} \rightarrow S^{1}$ based at (1,0), by (a), we have a unique lift $\tilde{f}: \it{I} \rightarrow \mathbb{R}$ starting at 0 since $0 \in p^{-1}((1,0))$. Now, since $ p^{-1}((1,0)) = \mathbb{Z}$ and $p\tilde{f}(1)=(1,0)$, $\tilde{f}$ ends at some integer n. Thus, by the reformulated definition of $\Phi$, we have $\Phi(n)=[p\tilde{f}]=[f]$. Thus, the map is surjective.
+
+(3)Injectiveness:<br>Suppose $\Phi(m)=\Phi(n)$, which is that $\omega\_{n}$ is homotopy to $\omega\_{m}$. By (b), the homotopy lifts to a unique homotopy $\tilde{f\_{t}}$ of paths starting at $0$. Now, by the uniqueness in (a), $\tilde{f\_{0}}=\tilde{\omega\_{m}}$ and $\tilde{f\_{1}}=\tilde{\omega\_{n}}$. Since $\tilde{f\_{t}}$ is a homotopy of paths, the start points and end points must be the same in every $\tilde{f\_{t}}$. Looking at the endpoints n and m for $t=0$ and $t=1$, we know that $n=m$. The the map is injective.
+
+Note that we can directly deduct from (a) a series of map that satisfies the uniqueness and conditions for a lift, but they might not be continuous on t. But, we can combine (a) and (b) in some way, this produces the proposition (c), which implies (a) and (b).
+
+(c)Given a map $F : Y\times I \rightarrow S^{1}$ and a map $\tilde{F}: Y \times \{0\} \rightarrow \mathbb{R}$ lifting $F\|\_{Y \times \{0\}}$, then there<br>is a unique map $Y \times I \rightarrow \mathbb{R}$ lifting F and restricting to the given $\tilde{F}$ on $Y \times \{0\}$.
+
+Now, this implies (a) since if we make $Y$ be a single point, we get (a). For (b), let $Y=\it{I}$, $F$ can be seen as homotopy, where the given $\tilde{F}:I \times {0} \rightarrow \mathbb{R}$ is given by (a). Now, by (c), we have the unique lift $\tilde{F}:I\times I \rightarrow \mathbb{R}$. Now, since $\tilde{F}\|\_{\{0\} \times \it{I}}$ and $\tilde{F}\|\_{\{1\} \times \it{I}}$ are respectively the lift of the constant paths(startpoints and the endpoints of F seeing as a homotopy), they must be constant by the uniqueness in (a). Thus, $\tilde{F}$ can be treated as a homotopy of paths lifting F seeing as a homotopy of paths.
+
+To prove (c), we will use one special property of $p$:<br>(*)There is an open cover $\{U\_{\alpha}\}$ of $S^{1}$ such that for each $\alpha$, $p^{-1}(U\_{\alpha})$ can be<br>decomposed as a disjoint union of open sets each of which is mapped homeomorphically onto $U\_{\alpha}$ by $p$.<br>The above can be satisfied by taking $U\_{\alpha}$ to be two open arcs in $S^{1}$ whose union is $S^{1}$
+
+We first contruct a lift $\tilde{F}:N \times I \rightarrow \mathbb{R}$ for $N$ that is the neighborhood of $y\_{0} \in Y$. By the continuity of $F$, there exists a product neighborhood $(N\_{t},(a\_{t},b\_{t}))$ of $\{y\_{0}\}\times {t}$ for each t, such that $F((N\_{t},(a\_{t},b\_{t})))$ $\subset$ $U\_{\alpha}$ for some $\alpha$. Since $y\_{0} \times \it{I}$ is compact, we can choose a neighborhood $N$ and have a finite partition $0=t\_{0}&lt;t\_{1}&lt;t\_{2}&lt;...&lt;t\_{m-1}&lt;t\_{m}=1$ for $\it{I}$, and $F(N\times [t\_{i},t\_{i+1}]) \subset U\_{\alpha}$.
+
+ <!-- /wp:paragraph --> <!-- wp:paragraph --> $\bf{Proof}$ of (c):<br> Now, we inductively assume $\tilde{F}$ is constructed on $N \times [0,t\_{i}]$. We have $F(N \times [t\_{i},t\_{i+1}]) \subset U\_{i}$, now by (*), there is an open set $\tilde{U\_{i}} \subset \mathbb{R}$ projecting homeomorphically onto $U\_{i}$ by $p$ and containing the point $\tilde{F}(y\_{0},t\_{i})$. We can assume $\tilde{F}(N \times t\_{i})$ is contained in $\tilde{U\_{i}}$, since otherwise we replace N with $F^{-1}(U\_{i}) \cap N\times t\_{i}$. Now we define $\tilde{F}$ as the composition of F and homeomorphism $p^{-1}:U\_{i}\rightarrow \tilde{U\_{i}}$. After finite repeations of doing this, we obtain the desired lift $\tilde{F}:N \times \it{I} \rightarrow R$ for N neighborhood of specific $y\_{0}$.
+
+Now we show the uniqueness part in the special case of (c) where $Y$ is a single point. We can omit the notation Y since $Y \times I$ is the same as to $I$. Suppose we have two lifts $\tilde{F}$ and $\tilde{F}^{'}$ with $\tilde{F}(0)$=$\tilde{F}^{'}(0)$. We first choose a finite partition $0=t\_{0}&lt;t\_{1}&lt;t\_{2}&lt;...&lt;t\_{m-1}&lt;t\_{m}=1$ for $\it{I}$ as before, such that $F([t\_{i},t\_{i+1}])$ is contained in $U\_{i}$. Assume inductively that $\tilde{F}$ agrees with $\tilde{F}^{'}$ on $[0,t\_{i}]$. Now, since $[t\_{i},t\_{i+1}]$ is connected, $\tilde{F}([t\_{i},t\_{i+1}])$ is connected and thus contained in one of disjoint open sets $\tilde{U\_{i}}$. So, $\tilde{F}^{'}([t\_{i},t\_{i+1}])$ is also contained in some $\tilde{U\_{i}}$ which is the same as the one before due to the fact that $\tilde{F}(t\_{i})=\tilde{F}^{'}(t\_{i})$. Because $p$ is injective on $\tilde{U\_{i}}$ and $p\tilde{F}=p\tilde{F}^{'}$ in $\tilde{U\_{i}}$, $\tilde{F}=\tilde{F}^{'}$ on $[t\_{i},t\_{i+1}]$. The induction is completed.
+
+Finally, we can construct a bigger map from the neighborhoods of a specific single point. Since $\tilde{F}$ is unique on $N \times I$ for N a neighborhood of $y$, whenever two $N \times I$ overlap, $\tilde{F}$ must be the same on the overlapping part. So, we get a well-defined $\tilde{F}$ for all Y. It is continuous since it is continuous on every $N \times I$ and it is unique since it is unique on every $\{y\} \times \it{I}$.
+
+Finally, we can construct a bigger map from the neighborhoods of a specific single point. Since $\tilde{F}$ is unique on $N \times I$ for N a neighborhood of $y$, whenever two $N \times I$ overlap, $\tilde{F}$ must be the same on the overlapping part. So, we get a well-defined $\tilde{F}$ for all Y. It is continuous since it is continuous on every $N \times I$ and it is unique since it is unique on every $\{y\} \times \it{I}$.
+
+This proof is from "Algebraic Topology" by Allen Hatcher.

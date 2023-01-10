@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Homotopy Extension Property for CW-spectra"
+katex: True
+categories: AlgTop
+---
+
+Recently I am trying to learn stable homotopy theory. I got stuck in the proof of HEP in Adams' blue book. It took me one day to figure it out. So, I will record the proof here.
+
+$\bf{Lemma}$:
+
+Let (X,A) be a pair of CW-spectra and $\emptyset:B \rightarrow Y$ a function of spectra such that $\emptyset\_\*\: \pi\_\*(B)\rightarrow \pi\_\*(Y)$ is an isomorphism. Suppose given maps $f\:X\rightarrow Y$ and $g:A \rightarrow B$ and a homotopy $h\:Cyl(A)\rightarrow Y$ from $f\mid \_A$ to $\emptyset g$. Then we can extend g over X and h over $Cyl(X)$ so that h becomes a homotopy from f to $\emptyset g:X\rightarrow Y$.
+
+Diagrammatically, it looks like
+<!-- \[\begin{tikzcd}A && {Cyl(A)} && A \\& Y && B \\X && {Cyl(X)} && X\arrow["{\tilde{g}}", dashed, from=3-5, to=2-4]\arrow[from=1-5, to=3-5]\arrow["{i_1}"', from=1-5, to=1-3]\arrow[from=1-3, to=3-3]\arrow["{i_1}", from=3-5, to=3-3]\arrow["{i_0}"', from=3-1, to=3-3]\arrow[from=1-1, to=3-1]\arrow["{i_0}", from=1-1, to=1-3]\arrow["h"', from=1-3, to=2-2]\arrow["f", from=3-1, to=2-2]\arrow["{\tilde{h}}", dashed, from=3-3, to=2-2]\arrow["g"', from=1-5, to=2-4]\arrow["\emptyset"'{pos=0.4}, from=2-4, to=2-2]
+\end{tikzcd}\] -->
+<iframe class="quiver-embed" src="https://q.uiver.app/?q=WzAsOCxbMiwwLCJDeWwoQSkiXSxbMCwwLCJBIl0sWzQsMCwiQSJdLFswLDIsIlgiXSxbMiwyLCJDeWwoWCkiXSxbNCwyLCJYIl0sWzEsMSwiWSJdLFszLDEsIkIiXSxbNSw3LCJcXHRpbGRle2d9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNV0sWzIsMCwiaV8xIiwyXSxbMCw0XSxbNSw0LCJpXzEiXSxbMyw0LCJpXzAiLDJdLFsxLDNdLFsxLDAsImlfMCJdLFswLDYsImgiLDJdLFszLDYsImYiXSxbNCw2LCJcXHRpbGRle2h9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNywiZyIsMl0sWzcsNiwiXFxlbXB0eXNldCIsMix7ImxhYmVsX3Bvc2l0aW9uIjo0MH1dXQ==&embed" width="728" height="432" style="border-radius: 8px; border: none;"></iframe>
+where $\emptyset$ is an ismorphism between stable homotopy groups.
+
+Like always, we work at the level of functions. That is, consider the representatives $f:X'\rightarrow Y$ and $h:Cyl(A')\rightarrow Y$, where $X' \supset A'$ and $X'$ and $A'$ are confinal in $X$ and $A$ respectively. And like always, we use Zorn's lemma on the triples ordered like in usual extension problem. 
+
+
+In the following discussion, we use $'$ to denote that the function is an extension of the original one, focusing on ordered triples $(U,h',g')$ where $g':U \rightarrow B$, $h':Cyl(U) \rightarrow B$, a homotopy from $f \mid \_ U$ to $\emptyset g'$ and $h' i\_1 = \emptyset g'$. And I will abuse notations up to suspensions.
+
+Since we have upper bound for any chain (taking union), we get a maximal element $(U,h',g')$. We claim that it is cofinal. Suppose not, by lemma 3.1, we can find a spectrum V that just contain on more stable cell than B, thus we have the representative $e^m$ at stage n.
+
+To contradict the assumption, it suffices to extend it to $(V,h'\',g'')$. 
+
+Notice ahead: always think about a ball as the cone of a sphere, thus a map from a ball is equivalent to the nullhomotopy of the map restricting at the boundary.
+
+Consider the map
+
+$h' \cup f: I^+ \wedge (\partial e) \cup 0 \wedge e \rightarrow Y$. 
+Since $I^+ \wedge (\partial e) \cup 0 \wedge e$ is homotopically equivalent to a ball, therefore $h' \mid \_{ 1 \wedge \partial e} = 0 \in \pi\_\* (Y)$. But since $\pi\_\*(B) \rightarrow \pi\_\*(Y)$ is an isomorphism, this implies that $g'\mid \_{1 \wedge \partial e}=0 \in \pi\_\*(B)$. Then, after enough suspensions, we get a nullhomotopy and glue that to $h' \cup f$, we get
+
+$h' \cup f \cup \emptyset g'' : I^+ \wedge (\Sigma^k \partial  e) \cup 0 \wedge \Sigma^k e \cup 1 \wedge \Sigma^k e \rightarrow Y$
+
+which is a sphere, thus it determines an element $\gamma \in \pi\_{\*+1}(Y)$. After enough suspensions, we lift $-\gamma$ and add it to $g''$ (unquotient g'' into some $I^+ \wedge \Sigma^{k'}\partial e$ and glue some $-\gamma: (I^{m+k'}, \partial I^{m+k'}) \rightarrow (B,*)$ to it. That's the extension of $g'' \mid \_{1 \wedge \partial e}$).
+
+After updating $k$ and $g''$, we get a new nullhomotopic map
+$h' \cup f \cup \emptyset g'' : I^+ \wedge ( \Sigma^k \partial e) \cup 0 \wedge \Sigma^k e \cup 1 \wedge \Sigma^k e \rightarrow Y$.
+
+The null homotopy is the desired extension of $h'$.
+
+
+
