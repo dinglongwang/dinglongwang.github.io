@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "
+∞-categories of Presheaf
+"
+katex: True
+categories: AlgTop, ∞-category
+---
+### Introduction
+
+Arguably, the most important idea in category theory is the Yonenda lemma, whose significance lies in both mathematics and philosophy. The statement involves the category of presheaf of sets.
+
+All of the above admits a generalization to the theory of ∞-category.
+
+In HTT, Lurie presents three seemingly "competitive" models for ∞-categories of presheaf. But it later turns out that they are equivalent, so they can work together like join/slice and alternate join/slice.
+
+Here we rewrite all the proofs using theory worked out in Rezk's note, which is simpler for once you remember the important theorems.
+
+### Definitions
+
+Given $C$ a quasicategory, we can define the presheaf over $C$ to be
+
+1. $\mathcal P(C)$:=Fun($C^{op}$, $\mathcal{S}$), where $\mathcal{S}$ is the ∞-category of spaces, i.e., $N^{\Delta}(Kan)$.
+2. $\mathcal P'(C)$:= $N^{\Delta}(P'\_{\Delta}(C))$, where $P'\_{\Delta}(C)$ is the full subcategory of the overcategory $sSet_{/C}$, spanned by right fibrations.
+3. $\mathcal P^{\'\'}(\phi):=(sSet^C)_{cf}$, where $\phi:\mathfrak{C}[S] \rightarrow C$ is an equivalence of simplicial category, $sSet^C$ is the category of *simplicial* functors from C to sSet, equipped with the induced projective model structure ($\phi$ is not used here. It is used in the (un)straightening process).
+
+Some justifications can be made. 
+
+(1) is the most straightforward in the context of quasicategory, simply uses the internal Hom (function complex) to replace the Hom.
+
+(2) is relatively harder. First of all, it is well-defined because $P^{\'}\_{\Delta}(C)$ is a fibrant simplicial category, which is sent to the fibrant object in simplicial set (Joyal model structure), i.e., quasicategory. It is also clear that $P^{\'}\_{\Delta}(C)$ is a collection of quasicategories fibered in quasigroupoids with base $C$.
+
+(3) can be viewed as simplicial nerve of the simplicial presheaves over $C^{op}$. In the special case $\phi=id$ and $C=\mathfrak{C}[S]^{op}$, this is indeed the simplicial presheaves over $\mathfrak{C}[S]$.
+
+These models turn out to be equivalent but the proof involves theory of simplicial category apparently so I will not present it here.
+
+### Limits/Colimits in $\infty$-categories of presheaf
+A big advantange of presheaf category is that it admits (small) limits and colimits. This is also true in the $\infty$-category analogue. In fact, this can be computed pointwise. (Under construction)

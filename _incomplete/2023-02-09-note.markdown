@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "Homotopy Pushout is Well-Defined"
+katex: True
+categories: AlgTop
+---
+
+The title simply means the following theorem.
+
+$\bf{Theorem}$:
+<!-- \[\begin{tikzcd}
+	X && W && Y \\
+	& {\Rightarrow_F} && {\Rightarrow_G} \\
+	{X^{'}} && {W^{'}} && {Y^{'}}
+	\arrow["\alpha", from=1-1, to=3-1]
+	\arrow["\gamma", from=1-3, to=3-3]
+	\arrow["f"', from=1-3, to=1-1]
+	\arrow["g"', from=1-5, to=1-3]
+	\arrow["{g^{'}}", from=3-5, to=3-3]
+	\arrow["{f^{'}}", from=3-3, to=3-1]
+	\arrow["\beta", from=1-5, to=3-5]
+\end{tikzcd}\] -->
+Suppose we have the following homotopy commutative diagram,
+<iframe class="quiver-embed" src="https://q.uiver.app/?q=WzAsOCxbMCwwLCJYIl0sWzAsMiwiWF57J30iXSxbMiwyLCJXXnsnfSJdLFsyLDAsIlciXSxbNCwwLCJZIl0sWzQsMiwiWV57J30iXSxbMSwxLCJcXFJpZ2h0YXJyb3dfRiJdLFszLDEsIlxcUmlnaHRhcnJvd19HIl0sWzAsMSwiXFxhbHBoYSJdLFszLDIsIlxcZ2FtbWEiXSxbMywwLCJmIiwyXSxbNCwzLCJnIiwyXSxbNSwyLCJnXnsnfSJdLFsyLDEsImZeeyd9Il0sWzQsNSwiXFxiZXRhIl1d&embed" width="688" height="432" style="border-radius: 8px; border: none;"></iframe>
+where the maps $\alpha,\beta,\gamma$ are homotopy equivalence, then the double cylinders (standard homotopy pushout) of the top row and bottom row are homotopy equivalent.
+
+$\bf{Proof}$: Consider the map $\theta=\theta(F,G):M(f,g)\rightarrow M(f',g')$, where
+$$\begin{aligned}
+\theta(x) & =\alpha(x) \\\\
+\theta(w, t) & = \begin{cases}F(w, 3 t) & 0 \leq t \leq \frac{1}{3} \\
+(\gamma(w), 3 t-1) & \frac{1}{3} \leq t \leq \frac{2}{3} \\
+G(w, 3 t-2) & \frac{2}{3} \leq t \leq 1\end{cases} \\\\
+\theta(y) & =\beta(x) .
+\end{aligned}$$.
+
+It suffices to prove that it is a homotopy equivalence. 
+The map $\theta$ here has some special properties. For example, it is natural , i.e.
+
+$\bf{lemma}$:
+$\theta(F\circ F', G \circ G' ) \cong \theta(F',G') \circ \theta(F,G) : M(f,g) \rightarrow M(f\'\',g'')$.

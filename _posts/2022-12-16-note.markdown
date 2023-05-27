@@ -5,7 +5,7 @@ katex: True
 categories: AlgTop
 ---
 
-Recently I am trying to learn stable homotopy theory. I got stuck in the proof of HEP in Adams' blue book. It took me one day to figure it out. So, I will record the proof here.
+Recently I am trying to learn stable homotopy theory. I got stuck in the proof of HEP in Adams' blue book. It took me some time to figure it out. So, I will record the proof here.
 
 $\bf{Lemma}$:
 
