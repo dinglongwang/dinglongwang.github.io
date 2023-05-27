@@ -7,4 +7,4 @@ categories: AlgTop
 
 In algebraic topology, there are many things involving "co" structures, e.g., comodule, coalgebra, hopf algebroid... Because Spec is contravariant in algebraic geometry, geometric algebraic structures also get reversed, e.g., algebraic groups. 
 
-It is challenging to handle the computation since we are not working in category theory (i.e., working up to isomorphism), which is the nature of the definition. [Here](/assets/costuff.pdf) is a note I am still writing.
+It is challenging to handle the computation since we are not working in category theory (i.e., working up to isomorphism), which is the nature of the definition. [Here](/assets/Costuff.pdf) is a note I am still writing.
