@@ -14,8 +14,6 @@ All of the above admits a generalization to the theory of ∞-category.
 
 In HTT, Lurie presents three seemingly "competitive" models for ∞-categories of presheaf. But it later turns out that they are equivalent, so they can work together like join/slice and alternate join/slice.
 
-Here we rewrite all the proofs using theory worked out in Rezk's note, which is simpler for once you remember the important theorems.
-
 ### Definitions
 
 Given $C$ a quasicategory, we can define the presheaf over $C$ to be
