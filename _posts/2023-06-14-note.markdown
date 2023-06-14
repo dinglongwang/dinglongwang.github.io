@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "
+Proof of Van Kampen
+"
+katex: True
+categories: AlgTop
+---
+
+Already two of my classmates asked me about this specific proof in May's concise. I think this might be a common confusion. In this post, I will try to explain it more.
+
+**Theorem:** Let $\mathcal{O}$ be a cover of a space X by path connected open subsets such that the intersection of finitely many subsets in $\mathcal{O}$ is again in $\mathcal{O}$. Regard $\mathcal{O}$ as a category whose morphisms are the inclusions of subsets and observe that the functor $\Pi$, restricted to the spaces and maps in $\mathcal{O}$ gives a diagram
+$$\Pi|_{\mathcal{O}}:\mathcal{O} \rightarrow \mathcal{G}\mathcal{P}$$ of groupoids. In fact, the groupoid $\Pi_(X)$ is the colimit of this diagram. In symbols,
+$$\Pi(X) \cong colim_{U \in \mathcal{O}} \Pi(U)$$
+
+**Proof:**
+By definition, we verify the universal property of $\Pi(X)$. It forms a cocone with maps induced by inclusion $i_U: \Pi(U)\rightarrow \Pi(X)$. So, let's assume we have another groupoid $C$ that forms a cocone with groupoids w.r.t. $\mathcal O$, i.e. a natural transformation $\eta:\Pi|_{\mathcal O } \rightarrow \underline{C}$, where $\underline{C}:\mathcal{O}\rightarrow \mathcal{G}\mathcal{P}$ is the constant functor with constant $C$. The universal property tells us that there should be a map $\tilde{\eta}:\Pi(X) \rightarrow \mathcal{C}$, such that $\tilde{\eta} \circ i_U = \eta_U$.
+
+<!-- https://q.uiver.app/#q=WzAsNCxbMSwwLCJDIl0sWzAsMiwiXFxQaShVKSJdLFsyLDIsIlxcUGkoVikiXSxbMSwxLCJcXFBpKFgpIl0sWzEsMCwiXFxldGFfVSJdLFsyLDAsIlxcZXRhX1YiLDJdLFsxLDMsImlfVSIsMl0sWzIsMywiaV9WIl0sWzMsMCwiXFx0aWxkZXtcXGV0YX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0= -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMSwwLCJDIl0sWzAsMiwiXFxQaShVKSJdLFsyLDIsIlxcUGkoVikiXSxbMSwxLCJcXFBpKFgpIl0sWzEsMCwiXFxldGFfVSJdLFsyLDAsIlxcZXRhX1YiLDJdLFsxLDMsImlfVSIsMl0sWzIsMywiaV9WIl0sWzMsMCwiXFx0aWxkZXtcXGV0YX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=&embed" width="463" height="432" style="border-radius: 8px; border: none; display: block; margin: auto;"></iframe>
+
+Since $\mathcal{O}$ is a cover of X, this already specified $\tilde{\eta}(x)$. Now we only need to construct $\tilde{\eta}(f)$ for $f:x \rightarrow y$. Certainly if, in the strict sense (not up to homotopy), f is contained in some $U \in \mathcal{O}$, then $\tilde{\eta}([f]) := \eta_{U}([f])$. Now everything is defined because any path $f:x \rightarrow y$ will be a finitely (compact image) union of paths $f_i:x_i \rightarrow x_{i+1}$ in $U_i \in \mathcal{O}$, where $x_i$ is chosen to lie in $U_i \cap U_{i+1} \in \mathcal{O}$ (nonempty because we label them in the order of the original path $f$ and it's impossible for consecutive open sets to have empty intersection).
+
+There is a problem (and here is my favorite part): is $\tilde{\eta}$ well-defined? Given a homotopy $H: I \times I \rightarrow X$ between f and g (H(t,0)=f(t), H(t,1)=g(t)), we subdivide the square $I \times I$ into subsquares, each is mapped to some $U$. Here you can use [Lebesgue's number lemma](https://en.wikipedia.org/wiki/Lebesgue%27s_number_lemma) to prove the existence where $X=I\times I$, $d$ is the usual metric. We might choose something finer such that the subdivision for $I \times {0}$ refines the subdivision used to decompose f, similarly for g (as long as the diameter is small. Do whatever you want). What we get here is a finite square of lattices that looks like:
+<!-- https://q.uiver.app/#q=WzAsMjUsWzAsMiwiXFxidWxsZXQiXSxbMCw0LCJcXGJ1bGxldCJdLFswLDMsIlxcYnVsbGV0Il0sWzEsMiwiXFxidWxsZXQiXSxbMSwzLCJcXGJ1bGxldCJdLFsxLDQsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMiwzLCJcXGJ1bGxldCJdLFsyLDQsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzMsMSwiXFxidWxsZXQiXSxbMywyLCJcXGJ1bGxldCJdLFszLDMsIlxcYnVsbGV0Il0sWzMsNCwiXFxidWxsZXQiXSxbNCw0LCJcXGJ1bGxldCJdLFs0LDMsIlxcYnVsbGV0Il0sWzQsMiwiXFxidWxsZXQiXSxbNCwxLCJcXGJ1bGxldCJdLFs0LDAsIlxcYnVsbGV0Il0sWzMsMCwiXFxidWxsZXQiXSxbMiwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzAsMCwiXFxidWxsZXQiXSxbMSw1XSxbNSw4XSxbOCwxNV0sWzE1LDE2XSxbMjQsMjNdLFsyMywyMl0sWzIyLDIxXSxbMjEsMjBdLFsyLDRdLFs0LDddLFs3LDE0XSxbMTQsMTddLFswLDNdLFszLDZdLFs2LDEzXSxbMTMsMThdLFsxMiwxOV0sWzExLDEyXSxbMTAsMTFdLFs5LDEwXSxbOSwyNF0sWzEwLDIzXSxbMTEsMjJdLFsxMiwyMV0sWzE5LDIwXSxbMTgsMTldLFsxMywxMl0sWzYsMTFdLFszLDEwXSxbMCw5XSxbMiwwXSxbNCwzXSxbNyw2XSxbMTQsMTNdLFsxNywxOF0sWzE2LDE3XSxbMTUsMTRdLFs4LDddLFs1LDRdLFsxLDJdXQ== -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMjUsWzAsMiwiXFxidWxsZXQiXSxbMCw0LCJcXGJ1bGxldCJdLFswLDMsIlxcYnVsbGV0Il0sWzEsMiwiXFxidWxsZXQiXSxbMSwzLCJcXGJ1bGxldCJdLFsxLDQsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMiwzLCJcXGJ1bGxldCJdLFsyLDQsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzMsMSwiXFxidWxsZXQiXSxbMywyLCJcXGJ1bGxldCJdLFszLDMsIlxcYnVsbGV0Il0sWzMsNCwiXFxidWxsZXQiXSxbNCw0LCJcXGJ1bGxldCJdLFs0LDMsIlxcYnVsbGV0Il0sWzQsMiwiXFxidWxsZXQiXSxbNCwxLCJcXGJ1bGxldCJdLFs0LDAsIlxcYnVsbGV0Il0sWzMsMCwiXFxidWxsZXQiXSxbMiwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzAsMCwiXFxidWxsZXQiXSxbMSw1XSxbNSw4XSxbOCwxNV0sWzE1LDE2XSxbMjQsMjNdLFsyMywyMl0sWzIyLDIxXSxbMjEsMjBdLFsyLDRdLFs0LDddLFs3LDE0XSxbMTQsMTddLFswLDNdLFszLDZdLFs2LDEzXSxbMTMsMThdLFsxMiwxOV0sWzExLDEyXSxbMTAsMTFdLFs5LDEwXSxbOSwyNF0sWzEwLDIzXSxbMTEsMjJdLFsxMiwyMV0sWzE5LDIwXSxbMTgsMTldLFsxMywxMl0sWzYsMTFdLFszLDEwXSxbMCw5XSxbMiwwXSxbNCwzXSxbNyw2XSxbMTQsMTNdLFsxNywxOF0sWzE2LDE3XSxbMTUsMTRdLFs4LDddLFs1LDRdLFsxLDJdXQ==&embed" width="688" height="688" style="border-radius: 8px; border: none;display: block; margin: auto;"></iframe>
+
+Each arrows are **actual** paths in the space and say the two ways of composition
+from the lower left corner to the upper right corner along the edges of the biggest square are f and g. If we map all of these using $\tilde{\eta}$, then since each small square lies in some U, in there we have a commutative relation. Thus, this finite square of lattices actually commute (in the image of $\tilde{\eta}$) and $\tilde{\eta}(f)=\tilde{\eta}(g)$ for simple reason.
+∎
+
+By the way, there is an ∞-version of this. If I have time I will write it up.

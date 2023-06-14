@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "
+The Moduli Stack of Formal Group Laws
+"
+katex: True
+categories: AlgTop, Chromatic
+---
+
+This post is essentially a continuation of my talk (very bad because of the jet lag). The main reference will be Lurie's notes on chromatic homotopy.

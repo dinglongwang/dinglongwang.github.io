@@ -10,9 +10,13 @@ categories: AlgTop, ∞-category
 
 Arguably, the most important idea in category theory is the Yonenda lemma, whose significance lies in both mathematics and philosophy. The statement involves the category of presheaf of sets.
 
-All of the above admits a generalization to the theory of ∞-category.
+All of the above admits a generalization to the theory of ∞-category. 
 
 In HTT, Lurie presents three seemingly "competitive" models for ∞-categories of presheaf. But it later turns out that they are equivalent, so they can work together like join/slice and alternate join/slice.
+
+He also referenced to simplicial categories for his proofs. But here we will established the results without too many contents in the appendices. Also, we will **ignore** the size issue (But it exists. And it's serious). For detailed references, see [Rezk's note](https://faculty.math.illinois.edu/~rezk/quasicats.pdf) and [Cisinki's book](https://cisinski.app.uni-regensburg.de/CatLR.pdf) (The latter involves more model category theory to deal with. Personally speaking, I think Rezk's note gives a fairly good introduction without going to too many techinical details).
+
+Here are the definitions given in HTT. We will only use (1). Readers can skip the other definitions.
 
 ### Definitions
 
@@ -32,5 +36,19 @@ Some justifications can be made.
 
 These models turn out to be equivalent but the proof involves theory of simplicial category apparently so I will not present it here.
 
+An important property of $\infty$-category $\mathcal{S}$ is that it classifies the left fibrations i.e. there is a universal left fibration $p\_{univ}:\mathcal{S}\_{.} \rightarrow \mathcal{S}$, where $\mathcal{S}\_{.}$ is the $\infty$-category of pointed $\infty$-groupoids. In fact, by the old "French trick", we take this as a definition.
+
+Here is a detailed construction that may be skipped: consider $U$ to be the simplicial set where $U\_n:=\cup\_{\forall X \in sSet} Hom(X,\Delta^n)$ and the action of a simplicial operator $f:[m] \rightarrow [n]$ is given by pullback (with strict constraint for pullback along identity). The pointed version $U\_{.}(n):=${$p: X \rightarrow \Delta^n \text{ which admits section s}$}. For n=0, this is simply pointed simplicial sets. The simplicial operator before is still well-defined because section is stable under pullback. Define $\mathcal{S}$ to be the subcomplex which only contains left fibrations. Similar for $S\_{.}$. There is a natural forgetful map from $S\_{.} \rightarrow S$. This is the universal left fibration mentioned before. To see that the objects of $\mathcal{S}$ are indeed $\infty$-groupoid, we apply the classifying property to any map $\Delta^{0} \rightarrow \mathcal{S}$. The pullback is clearly a Kan complex, thus a quasigroupoid.
+
+### Yoneda Lemma
+We would like to establish the Yoneda lemma. But first, what should be the Yoneda embedding $h_C: C \rightarrow Fun(C^{op}, \mathcal{S})$? By adjunction, it is equivalent to give a map $Hom_C:C^{op} \times C \rightarrow \mathcal{S}$. 
+
+The naive mapping space of objects in C does not have functoriality, i.e. we want mapping space of higher morphisms. But by the universal property of $\mathcal{S}$, it is also plausible to give a left fibration $(s_C,t_C):S(C) \rightarrow C^{op} \times C$, such that we have the following **homotopy** cartesian square (in Joyal):
+<!-- https://q.uiver.app/#q=WzAsNixbMiwwLCJcXG1hdGhjYWx7U31fLiJdLFsyLDEsIlxcbWF0aGNhbHtTfSJdLFsxLDAsIlMoQykiXSxbMSwxLCJDXntvcH1cXHRpbWVzIEMiXSxbMCwxLCJcXERlbHRhXnswfSJdLFswLDAsIm1hcF9DKHgseSkiXSxbMiwzLCIoc19DLHRfQykiXSxbMCwxXSxbMywxLCJcXHVuZGVybGluZXtIb219X0MiXSxbMiwxLCIiLDEseyJzdHlsZSI6eyJuYW1lIjoiY29ybmVyIn19XSxbMiwwXSxbNCwzLCIoeCx5KSJdLFs1LDRdLFs1LDJdLFs1LDMsIiIsMCx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dXQ== -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMiwwLCJcXG1hdGhjYWx7U31fLiJdLFsyLDEsIlxcbWF0aGNhbHtTfSJdLFsxLDAsIlMoQykiXSxbMSwxLCJDXntvcH1cXHRpbWVzIEMiXSxbMCwxLCJcXERlbHRhXnswfSJdLFswLDAsIm1hcF9DKHgseSkiXSxbMiwzLCIoc19DLHRfQykiXSxbMCwxXSxbMywxLCJcXHVuZGVybGluZXtIb219X0MiXSxbMiwxLCIiLDEseyJzdHlsZSI6eyJuYW1lIjoiY29ybmVyIn19XSxbMiwwXSxbNCwzLCIoeCx5KSJdLFs1LDRdLFs1LDJdLFs1LDMsIiIsMCx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dXQ==&embed" width="567" height="304" style="border-radius: 8px; border: none;display: block; margin: auto;"></iframe>
+
+and such a square determines $Hom_C$ up to homotopy.
+
+So, what's that map and in particular, what's the domain? Like usual, we first consider the 1-categorical scenario $\mathcal{S}:=\text{Set}$. For experts, it is immediate that this is the category of elements a.k.a. Grothendieck construction of $Hom:C^{op} \times C \rightarrow \mathcal{S}$. So, I believe there are many better posts about that. I will just state the answer: "twisted diagonal category". The following should not surprised you: we are going to construct the $\infty$-version of that.
 ### Limits/Colimits in $\infty$-categories of presheaf
 A big advantange of presheaf category is that it admits (small) limits and colimits. This is also true in the $\infty$-category analogue. In fact, this can be computed pointwise. (Under construction)
