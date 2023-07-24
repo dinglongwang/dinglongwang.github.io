@@ -4,4 +4,4 @@ title: Notes
 permalink: /notes/
 ---
 
-[Coconuts.pdf](/assets/costuff.pdf) (under construction)
+[Coconuts.pdf](/notes/costuff.pdf) (under construction)
