@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "
+THH/TC: How and Why?
+"
+katex: True
+categories: Algebraic Topology
+---
+
+I am currently reading Nikolaus-Scholze and Krause-Nikolaus to understand what is THH and what are some applications of it. This post will be essentially based on these two papers. I have finished my PhD applications, so I have plenty of time to fully immerse myself in these notes. I planned to write several pages before March ends, unlike my previous incomplete posts.
