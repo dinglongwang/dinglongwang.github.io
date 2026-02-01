@@ -51,4 +51,4 @@ and such a square determines $Hom_C$ up to homotopy.
 
 So, what's that map and in particular, what's the domain? Like usual, we first consider the 1-categorical scenario $\mathcal{S}:=\text{Set}$. For experts, it is immediate that this is the category of elements a.k.a. Grothendieck construction of $Hom:C^{op} \times C \rightarrow \mathcal{S}$. So, I believe there are many better posts about that. I will just state the answer: "twisted arrow category". The following should not surprised you: we are going to construct the $\infty$-version of that (actually opposite of it).
 ### Limits/Colimits in $\infty$-categories of presheaf
-A big advantange of presheaf category is that it admits (small) limits and colimits. This is also true in the $\infty$-category analogue. In fact, this can be computed pointwise. (Under construction)
+A big advantange of presheaf category is that it admits (small) limits and colimits. This is also true in the $\infty$-category analogue. In fact, this can be computed pointwise.

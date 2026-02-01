@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Files
+title: Research
 permalink: /files/
 ---
 
-[Coconuts.pdf](/files/costuff.pdf) (under construction)\
-[Rezk's note on quasicategories](/files/quasicategories.pdf) (fully commented version. If you want to see comments, please open it with Edge or Adobe. Red marks are typos or errors. Yellow marks are comments. I forget what do blue, green and pink marks indicate.)\
-[On components of the tensor square of a Weyl module](https://arxiv.org/abs/2312.12756) (submitted to Transformation Groups. A short paper I wrote with [Shiliang Gao](https://sites.google.com/illinois.edu/shiliang-gao), which can be seen as a discussion on the polytopal analogue of one conjecture of Kostant.)
+<!-- [Coconuts.pdf](/files/costuff.pdf) (under construction)\ -->
+## Undergrad Projects
+[On components of the tensor square of a Weyl module](https://link.springer.com/article/10.1007/s00031-024-09885-w) (joint with [Shiliang Gao](https://sites.google.com/illinois.edu/shiliang-gao)) Transformation Groups.

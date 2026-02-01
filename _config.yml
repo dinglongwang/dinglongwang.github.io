@@ -1,7 +1,7 @@
-title: Resolution of Thoughts
-email: dw18[AT]illinois[DOT]edu
+title: Dinglong Wang
+email: dw7[AT]u[DOT]northwestern[DOT]edu
 description: > # this means to ignore newlines until "show_excerpts:"
-  Mathematics Blog.
+  Dinglong Wang's personal website.
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
@@ -49,7 +49,6 @@ minima:
 header_pages:
   - about.md
   - files.md
-  - favorites.md
 # Build settings
 theme: minima
 markdown: kramdown
