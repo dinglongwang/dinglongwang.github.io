@@ -1,2 +1,44 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+.seminar-grid {
+  display: grid;
+  gap: 16px;
+  margin: 16px 0 28px;
+}
+
+.seminar-index-grid,
+.seminar-schedule-grid,
+.seminar-notes-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.seminar-card {
+  border: 1px solid $border-color-01;
+  border-radius: 6px;
+  padding: 16px;
+  background: mix($background-color, $border-color-01, 92%);
+}
+
+.seminar-card h3 {
+  margin-top: 4px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.seminar-card p {
+  margin-bottom: 8px;
+}
+
+.seminar-card__meta {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: $brand-color;
+  font-size: $small-font-size;
+  font-weight: 600;
+}
+
+.seminar-note {
+  min-height: 150px;
+}
