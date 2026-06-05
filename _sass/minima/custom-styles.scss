@@ -39,6 +39,26 @@
   font-weight: 600;
 }
 
+.seminar-button {
+  display: inline-block;
+  border: 1px solid $brand-color;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: $brand-color;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.seminar-button:visited {
+  color: $brand-color;
+}
+
+.seminar-button:hover {
+  background: $brand-color;
+  color: $background-color;
+  text-decoration: none;
+}
+
 .seminar-note {
   min-height: 150px;
 }
