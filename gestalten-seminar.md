@@ -26,8 +26,8 @@ Please sign up for talks using the shared Google Sheet. Talks may range from 50 
 ### Introduction and Preliminaries
 
 **Speaker:** Dinglong<br>
-**Date:** TBD<br>
-**References:** [Ste25](https://arxiv.org/abs/2511.09553), [Sch25](https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf) Lecture I
+**Date:** 6.18<br>
+**References:** [Ste23](https://arxiv.org/abs/2311.04515), [Del90](https://doi.org/10.1007/978-0-8176-4575-5_3), [GR17](https://bookstore.ams.org/surv-221), [HA](https://www.math.ias.edu/~lurie/papers/HA.pdf), [Ste20](https://arxiv.org/abs/2011.03035), [Aok25](https://arxiv.org/abs/2510.13503)
 </div>
 
 <div class="seminar-card" markdown="1">
@@ -145,6 +145,18 @@ Please sign up for talks using the shared Google Sheet. Talks may range from 50 
 </div>
 
 ## Talk Notes
+
+<div class="seminar-grid seminar-notes-grid" markdown="1">
+
+<div class="seminar-card seminar-note" markdown="1">
+### Week 1
+
+**Topic:** Introduction and Preliminaries  
+**Notes:** [Week 1](/files/gestalten-intro.pdf)
+</div>
+
+</div>
+
 <!-- 
 <div class="seminar-grid seminar-notes-grid" markdown="1">
 
